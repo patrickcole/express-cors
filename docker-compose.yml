@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  frontend:
+    build: ./front-end
+    expose:
+      - 4200
+    ports:
+      - 4200:4200
+    #volumes:
+      #- ./front-end:/usr/src/app
+  backend:
+    build: ./back-end
+    expose:
+      - 8080
+    ports:
+      - 8080:8080
+    #volumes:
+      #- ./back-end:/usr/src/app

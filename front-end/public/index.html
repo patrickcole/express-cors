@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Express CORS Sample</title>
+  </head>
+  <body>
+    <h1>Express CORS Sample</h1>
+    <pre id="resourceOutput">
+
+    </pre>
+    <script>
+      const outputDisplay = document.querySelector('#resourceOutput');
+
+      fetch('http://localhost:8080/posts')
+        .then( (res) => {
+          return res.json();
+        })
+        .then( (json) => {
+          outputDisplay.innerHTML = JSON.stringify(json);
+        })
+        .catch( (err) => {
+          outputDisplay.innerHTML = "There was an error fetching the resource.";
+        });
+    </script>
+  </body>
+</html>
